@@ -1,54 +1,59 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-    firstName: 'Selene',
-    lastName:  'Yu',
+    firstName: 'Shaan',
+    lastName:  '',
     get name() {
-        return `${this.firstName} ${this.lastName}`;
+        return [this.firstName, this.lastName].join(' ');
     },
-    role:      'Design Engineer',
+    role:      'Dev|Ops Engineer',
     avatar:    '/images/avatar.jpg',
-    location:  'Asia/Jakarta',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ['English', 'Bahasa']  // optional: Leave the array empty if you don't want to display languages
+    location:  'Asia/Dhaka',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+    languages: ['English', 'Bengali']  // optional: Leave the array empty if you don't want to display languages
 }
 
 const newsletter = {
-    display: true,
+    display: false,
     title: <>Subscribe to {person.firstName}'s Newsletter</>,
     description: <>I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.</>
 }
 
 const social = [
-    // Links are automatically displayed.
-    // Import new icons in /once-ui/icons.ts
     {
         name: 'GitHub',
         icon: 'github',
-        link: 'https://github.com/once-ui-system/nextjs-starter',
+        link: 'https://github.com/shanto/',
+    },
+    {
+        name: 'Discord',
+        icon: 'discord',
+        link: 'https://discord.com/users/shaan.icu/',
     },
     {
         name: 'LinkedIn',
         icon: 'linkedin',
-        link: 'https://www.linkedin.com/company/once-ui/',
+        link: 'https://www.linkedin.com/yafarhad/',
     },
     {
         name: 'X',
         icon: 'x',
-        link: '',
+        link: 'https://x.com/in/yafarhad/',
     },
-    {
-        name: 'Email',
-        icon: 'email',
-        link: 'mailto:example@gmail.com',
-    },
+    // {
+    //     name: 'Email',
+    //     icon: 'email',
+    //     link: 'mailto:mail@shaan.icu',
+    // },
 ]
 
 const home = {
     label: 'Home',
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Design engineer and builder</>,
-    subline: <>I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive<br/> user experiences. After hours, I build my own projects.</>
+    headline: <>Dev|Ops engineer <i>&amp;</i> Multi-talented Developer</>,
+    subline: <>I'm {person.firstName}, a freelance Dev|Ops engineer and software developer. <br/>
+    In my free time I dig into <InlineCode>GitHub</InlineCode> and look for abandoned cool projects.<br/>
+    </>
 }
 
 const about = {
@@ -64,28 +69,28 @@ const about = {
     },
     calendar: {
         display: true,
-        link: 'https://cal.com'
+        link: 'https://cal.com/shaan.icu'
     },
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology.</>
+        description: <>{person.firstName} is a multi-talent developer and devops engineer with a passion for transforming complex challenges into simple, elegant technical solutions. He started his career back in 2007. PHP, Python, Django, MySQL, PostgreSQL, Linux, AWS, Qemu/KVM, Postfix, Dovecot, Dojo, Cordova, .NET, ElectronJS etc are only a few keywords among many others that highlight his vast experience in the industry.</>
     },
     work: {
         display: true, // set to false to hide this section
         title: 'Work Experience',
         experiences: [
             {
-                company: 'FLY',
-                timeframe: '2022 - Present',
-                role: 'Senior Design Engineer',
+                company: 'Royer Design, Inc.',
+                timeframe: '2008 - Present',
+                role: 'Chief Development Engineer',
                 achievements: [
-                    <>Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user engagement and 30% faster load times.</>,
-                    <>Spearheaded the integration of AI tools into design workflows, enabling designers to iterate 50% faster.</>
+                    <><a href="https://royerdesign.com/">Miami based design agency</a> working in the industry for over a decade.</>,
+                    <>Developed numerous startup websites and apps for the agency— from simple branding websites to complex social apps.</>,
                 ],
-                images: [ // optional: leave the array empty if you don't want to display images
+                images: [
                     {
-                        src: '/images/projects/project-01/cover-01.jpg',
+                        src: '/images/projects/apps/SXSW-ChallengeStar-Group.jpg',
                         alt: 'Once UI Project',
                         width: 16,
                         height: 9
@@ -93,14 +98,21 @@ const about = {
                 ]
             },
             {
-                company: 'Creativ3',
-                timeframe: '2018 - 2022',
-                role: 'Lead Designer',
+                company: 'Paradise Publishers, Inc.',
+                timeframe: '2009 - 2022',
+                role: 'DevOps Engineer',
                 achievements: [
-                    <>Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.</>,
-                    <>Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue.</>
+                    <>Separation and reintegration of web, mail and database systems from monolithic legacy site setup.</>,
+                    <>Developing and managing organization workflows— issue tracking, source code management, deployment automation, log analysis, incident response etc.</>
                 ],
-                images: [ ]
+                images: [
+                    {
+                        src: '/images/projects/websites/free-ebooks.png',
+                        alt: 'Once UI Project',
+                        width: 16,
+                        height: 9
+                    }
+                ]
             }
         ]
     },
@@ -109,12 +121,8 @@ const about = {
         title: 'Studies',
         institutions: [
             {
-                name: 'University of Jakarta',
-                description: <>Studied software engineering.</>,
-            },
-            {
-                name: 'Build the Future',
-                description: <>Studied online marketing and personal branding.</>,
+                name: 'Daffodil Intl. University, Dhaka',
+                description: <>Studied computer science with software engineering and internet security major.</>,
             }
         ]
     },
@@ -123,33 +131,32 @@ const about = {
         title: 'Technical skills',
         skills: [
             {
-                title: 'Figma',
-                description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+                title: 'Dark Mode',
+                description: <>Able to transform legacy .NET XAML apps to support modern dark modes available in Windows 10-11.</>,
                 images: [
                     {
-                        src: '/images/projects/project-01/cover-02.jpg',
-                        alt: 'Project image',
+                        src: '/images/projects/desktop/synctrayzor.png',
+                        alt: 'SyncTrayzor Dark',
                         width: 16,
                         height: 9
-                    },
-                    {
-                        src: '/images/projects/project-01/cover-03.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
+                    }
                 ]
             },
+            // {
+            //     title: 'Integration Fix for Open-Source Projects',
+            //     description: <>...</>,
+            //     images: []
+            // },
             {
-                title: 'Next.js',
-                description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+                title: 'Internet Enabled Desktop Apps',
+                description: <>Building internet enabled desktop apps with modern frameworks like Electron/WebView2.</>,
                 images: [
                     {
-                        src: '/images/projects/project-01/cover-04.jpg',
-                        alt: 'Project image',
+                        src: '/images/projects/desktop/mtube.png',
+                        alt: 'mTube',
                         width: 16,
                         height: 9
-                    },
+                    }
                 ]
             }
         ]
@@ -176,77 +183,11 @@ const gallery = {
     label: 'Gallery',
     title: 'My photo gallery',
     description: `A photo collection by ${person.name}`,
-    // Images from https://pexels.com
     images: [
         { 
-            src: '/images/gallery/img-01.jpg', 
+            src: '/images/gallery/dinajpur.jpg', 
             alt: 'image',
             orientation: 'vertical'
-        },
-        { 
-            src: '/images/gallery/img-02.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-03.jpg', 
-            alt: 'image',
-            orientation: 'vertical'
-        },
-        { 
-            src: '/images/gallery/img-04.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-05.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-06.jpg', 
-            alt: 'image',
-            orientation: 'vertical'
-        },
-        { 
-            src: '/images/gallery/img-07.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-08.jpg', 
-            alt: 'image',
-            orientation: 'vertical'
-        },
-        { 
-            src: '/images/gallery/img-09.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-10.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-11.jpg', 
-            alt: 'image',
-            orientation: 'vertical'
-        },
-        { 
-            src: '/images/gallery/img-12.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-13.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
-        },
-        { 
-            src: '/images/gallery/img-14.jpg', 
-            alt: 'image',
-            orientation: 'horizontal'
         },
     ]
 }

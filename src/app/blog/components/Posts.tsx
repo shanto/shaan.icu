@@ -57,6 +57,11 @@ export function Posts({
                                     onBackground="neutral-weak">
                                     {formatDate(post.metadata.publishedAt, false)}
                                 </Text>
+                                <Text
+                                    variant="body-default-s"
+                                    onBackground="neutral-medium">
+                                    {post.metadata.summary}
+                                </Text>
                             </Flex>
                         </SmartLink>
                     ))}

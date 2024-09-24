@@ -11,25 +11,25 @@ const routes = {
 // Enable password protection on selected routes
 // Set password in pages/api/authenticate.ts
 const protectedRoutes = {
-    '/work/automate-design-handovers-with-a-figma-to-code-pipeline': true
+    '/connect': true
 }
 
 const effects = {
     gradient: true,
     dots:     true,
-    lines:    false,
+    lines:    true,
 }
 
 const style = {
-    theme:       'dark',         // dark | light
-    neutral:     'gray',         // sand | gray | slate
-    brand:       'aqua',         // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-    accent:      'yellow',       // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-    solid:       'contrast',     // color | contrast
-    solidStyle:  'flat',         // flat | plastic
-    border:      'playful',      // rounded | playful | conservative
-    surface:     'translucent',  // filled | translucent
-    transition:  'all'           // all | micro | macro
+    theme:      "dark",             // theme:       'dark',         // dark | light
+    brand:      "cyan",             // neutral:     'gray',         // sand | gray | slate
+    accent:     "aqua",             // brand:       'aqua',         // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+    neutral:    "slate",            // accent:      'yellow',       // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+    border:     "conservative",     // solid:       'contrast',     // color | contrast
+    solid:      "contrast",         // solidStyle:  'flat',         // flat | plastic
+    solidStyle: "flat",             // border:      'playful',      // rounded | playful | conservative
+    surface:    "translucent",      // surface:     'translucent',  // filled | translucent
+    transition: "all"               // transition:  'all'           // all | micro | macro
 }
 
 const display = {
