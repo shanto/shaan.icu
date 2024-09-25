@@ -32,18 +32,18 @@ const social = [
     {
         name: 'Discord',
         icon: 'discord',
-        link: 'https://discord.com/users/shaan.icu/',
+        link: 'https://discord.gg/R2fzW8dd',
     },
-    {
-        name: 'LinkedIn',
-        icon: 'linkedin',
-        link: 'https://www.linkedin.com/yafarhad/',
-    },
-    {
-        name: 'X',
-        icon: 'x',
-        link: 'https://x.com/in/yafarhad/',
-    },
+    // {
+    //     name: 'LinkedIn',
+    //     icon: 'linkedin',
+    //     link: 'https://www.linkedin.com/yafarhad/',
+    // },
+    // {
+    //     name: 'X',
+    //     icon: 'x',
+    //     link: 'https://x.com/in/yafarhad/',
+    // },
     // {
     //     name: 'Email',
     //     icon: 'email',
