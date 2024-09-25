@@ -4,12 +4,17 @@ const person = {
     firstName: 'Shaan',
     lastName:  '',
     get name() {
-        return [this.firstName, this.lastName].join(' ');
+        return [this.firstName, this.lastName].join(' ').trim();
     },
     role:      'Dev|Ops Engineer',
     avatar:    '/images/avatar.jpg',
     location:  'Asia/Dhaka',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ['English', 'Bengali']  // optional: Leave the array empty if you don't want to display languages
+    languages: ['English', 'Bengali'],  // optional: Leave the array empty if you don't want to display languages
+    keywords: ['C', 'C++', 'Python', 'Django', 'JavaScript', 'ReactJS', 'ElectronJS', 'Cordova', 'AWS', 'Linux'],
+    keywordsEx: ['Qemu/KVM', 'Proxmox', 'Postfix', 'Dovecot', 'Dojo', '.NET'],
+    get keywordsAll() {
+        return this.keywords.concat(this.keywordsEx);
+    }
 }
 
 const newsletter = {
@@ -48,11 +53,15 @@ const social = [
 
 const home = {
     label: 'Home',
-    title: `${person.name}'s Portfolio`,
-    description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Dev|Ops engineer <i>&amp;</i> Multi-talented Developer</>,
-    subline: <>I'm {person.firstName}, a freelance Dev|Ops engineer and software developer. <br/>
-    In my free time I dig into <InlineCode>GitHub</InlineCode> and look for abandoned cool projects.<br/>
+    title: `${person.name}′s Site`,
+    description: `${person.name}′s personal website`,
+    headline: <>DevOps engineer &amp;<br/> Full-Stack Developer</>,
+    subline: <>
+        Hello! I′m {person.firstName}. Former DevOps engineer and full-stack software developer.<br/>
+        {person.keywords.join(', ')}<br/>
+        are only few from my full list of keywords. Explore the site for the full list.<br/>
+        In my free time I dig into <InlineCode>GitHub</InlineCode> and..<br/>
+        look for abandoned but useful projects to adopt.<br/>
     </>
 }
 
@@ -74,7 +83,7 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>{person.firstName} is a multi-talent developer and devops engineer with a passion for transforming complex challenges into simple, elegant technical solutions. He started his career back in 2007. PHP, Python, Django, MySQL, PostgreSQL, Linux, AWS, Qemu/KVM, Postfix, Dovecot, Dojo, Cordova, .NET, ElectronJS etc are only a few keywords among many others that highlight his vast experience in the industry.</>
+        description: <>{person.firstName} is a multi-talent full-stack developer and former devops engineer with a passion for transforming complex challenges into simple, elegant technical solutions. He started his career back in 2007. {person.keywordsAll.join(', ')} etc are only a few keywords among many others that highlight his vast experience in the industry.</>
     },
     work: {
         display: true, // set to false to hide this section
