@@ -1,6 +1,6 @@
 import { Flex } from "@/once-ui/components";
 import MasonryGrid from "./components/MasonryGrid";
-import { baseURL, gallery, person } from "../resources";
+import { Analytics, baseURL, gallery, person } from "../resources";
 
 export function generateMetadata() {
 	const title = gallery.title;
@@ -61,6 +61,7 @@ export default function Gallery() {
 				}}
 			/>
             <MasonryGrid/>
+			<Analytics/>
         </Flex>
     );
 }

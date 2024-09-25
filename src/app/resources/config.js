@@ -46,4 +46,6 @@ const mailchimp = {
     }
 }
 
-export { routes, protectedRoutes, effects, style, display, mailchimp, baseURL };
+import { Analytics } from "@vercel/analytics/react";
+
+export { routes, protectedRoutes, effects, style, display, mailchimp, Analytics, baseURL };
