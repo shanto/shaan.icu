@@ -195,8 +195,28 @@ export default function About() {
                         <Flex
                             direction="column"
                             textVariant="body-default-l"
-                            fillWidth gap="m" marginBottom="xl">
+                            fillWidth gap="m" marginBottom="l">
                             {about.intro.description}
+                        </Flex>
+                    )}
+
+                    { about.history.display && (
+                        <Flex
+                            direction="column"
+                            textVariant="body-default-xl"
+                            fillWidth gap="m" marginBottom="l">
+                            <Heading
+                                as="h3"
+                                variant="body-strong-m">
+                                {about.history.title}
+                            </Heading>
+                            <Text
+                                as="p"
+                                variant="body-default-m"
+                                onBackground="neutral-weak">
+                                {about.history.description}
+                            </Text>
+                                
                         </Flex>
                     )}
 
