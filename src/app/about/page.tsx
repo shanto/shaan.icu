@@ -316,7 +316,7 @@ export default function About() {
 										gap="4"
 										direction="column"
 									>
-										{(institution.link && (
+										{(institution?.link && (
 											<Text
 												as="a"
 												href="#test"

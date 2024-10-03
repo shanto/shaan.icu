@@ -196,6 +196,7 @@ const about = {
 		institutions: [
 			{
 				name: "Daffodil Intl. University, Dhaka",
+				link: "https://daffodilvarsity.edu.bd/",
 				description: (
 					<>
 						Studied computer science with software engineering and internet
