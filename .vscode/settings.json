@@ -1,0 +1,12 @@
+{
+    "mdx-preview.preview.useWhiteBackground": false,
+    "simpleBrowser.focusLockIndicator.enabled": false,
+    "vscode-edge-devtools.headless": true,
+    "vscode-edge-devtools.browserArgs": [
+        // "--window-position=-2400,-2400", // fix for white screen whith --headless=new (default)
+        "--headless=old",
+        "--disable-gpu",
+        "--no-sandbox",
+    ],
+    "typescript.tsdk": "node_modules\\typescript\\lib"
+}

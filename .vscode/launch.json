@@ -6,27 +6,37 @@
 	"configurations": [
 		{
 			"name": "Next.js Dev",
-			"type": "node-terminal",
-			"request": "launch",
-			"command": "npx next dev"
-		},
-		{
-			"name": "Next.js Debug",
 			"type": "node",
+			"program": "node_modules/next/dist/bin/next",
+			"args": [ "dev" ],
 			"request": "launch",
-			"program": "${workspaceFolder}/node_modules/next/dist/bin/next",
+			"outputCapture": "std",
 			"runtimeArgs": ["--inspect"],
 			"skipFiles": ["<node_internals>/**"],
-			// "serverReadyAction": {
-			// 	"action": "debugWithChrome",
-			// 	"killOnServerStop": true,
-			// 	"pattern": "- Local:.+(https?://.+)",
-			// 	"uriFormat": "%s",
-			// 	"webRoot": "${workspaceFolder}"
-			// }
+			"sourceMaps": true,
+			"resolveSourceMapLocations": [
+				"${workspaceFolder}/",
+				"!/node_modules/**"
+			],
+			"serverReadyAction": {
+				"action": "startDebugging",
+				"name": "EdgeBrowserInternal",
+				"killOnServerStop": true,
+				"pattern": "- Local:.+(https?://.+)"
+			}
 		},
 		{
-			"name": "Firefox (Zen) Debug",
+			"name": "EdgeBrowserInternal",
+			"vscode-edge-devtools.browserFlavor": "Beta",
+			"type": "vscode-edge-devtools.debug",
+			"request": "launch",
+			"sourceMapPathOverrides": {
+				"webpack://_N_E/src/*": "${webRoot}/node_modules/next/dist/*"
+			},
+			"webRoot": "${workspaceFolder}"
+		},
+		{
+			"name": "ZenBrowser",
 			"type": "firefox",
 			"firefoxExecutable": "C:/Program Files/Zen Browser/zen.exe",
 			"webRoot": "${workspaceFolder}",
@@ -39,21 +49,6 @@
 				"zen.view.compact.hide-tabbar": true,
 				"zen.view.compact.hide-toolbar": true
 			}
-		},
-        {
-			"name": "Next.js: build",
-			"type": "node-terminal",
-			"request": "launch",
-			"command": "npx next build"
-		}
-	],
-	"compounds": [
-		{
-			"name": "Full Stack Debug",
-			"configurations": [
-				"Next.js Debug",
-				"Firefox (Zen) Debug"
-			]
 		}
 	]
 }
