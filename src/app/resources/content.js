@@ -30,7 +30,7 @@ const newsletter = {
 
 const social = [
 	{ name: "GitHub", icon: "github", link: "https://github.com/shanto/" },
-	{ name: "Discord", icon: "discord", link: "https://discord.gg/R2fzW8dd" },
+	{ name: "Discord", icon: "discord", link: "https://discord.gg/52j6Y2Je8a" },
 	{ name: "WhatsApp", icon: "whatsapp", link: "https://call.whatsapp.com/voice/otQM0BadlmG6leGZhXXE9W" },
 	// { name: "LinkedIn", icon: "linkedin", link: "https://www.linkedin.com/yafarhad/" },
 	// { name: "X", icon: "x", link: "https://x.com/in/yafarhad/" },
