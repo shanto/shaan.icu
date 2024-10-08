@@ -1,4 +1,4 @@
-import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc';
+import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote-client/rsc';
 import React, { ReactNode } from 'react';
 
 import { SmartImage, SmartLink, Text } from '@/once-ui/components';
@@ -80,8 +80,7 @@ function createImage({ alt, src, ...props }: SmartImageProps & { src: string }) 
 }
 
 function slugify(str: string): string {
-    return str
-        .toString()
+    return str?.toString()
         .toLowerCase()
         .trim() // Remove whitespace from both ends of a string
         .replace(/\s+/g, '-') // Replace spaces with -

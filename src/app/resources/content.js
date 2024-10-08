@@ -10,18 +10,7 @@ const person = {
 	avatar: "/images/avatar.jpg",
 	location: "Asia/Dhaka", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
 	languages: ["English", "Bengali"], // optional: Leave the array empty if you don't want to display languages
-	keywords: [
-		"C",
-		"C++",
-		"Python",
-		"Django",
-		"JavaScript",
-		"ReactJS",
-		"ElectronJS",
-		"Cordova",
-		"AWS",
-		"Linux",
-	],
+	keywords: ["C", "C++", "Python", "Django", "JavaScript", "ReactJS", "ElectronJS", "Cordova", "AWS", "Linux"],
 	keywordsEx: ["Qemu/KVM", "Proxmox", "Postfix", "Dovecot", "Dojo", ".NET"],
 	get keywordsAll() {
 		return this.keywords.concat(this.keywordsEx);
@@ -33,38 +22,19 @@ const newsletter = {
 	title: <>Subscribe to {person.firstName}'s Newsletter</>,
 	description: (
 		<>
-			I occasionally write about design, technology, and share thoughts on the
-			intersection of creativity and engineering.
+			I occasionally write about design, technology, and share thoughts on the intersection of creativity and
+			engineering.
 		</>
 	),
 };
 
 const social = [
-	{
-		name: "GitHub",
-		icon: "github",
-		link: "https://github.com/shanto/",
-	},
-	{
-		name: "Discord",
-		icon: "discord",
-		link: "https://discord.gg/R2fzW8dd",
-	},
-	// {
-	//     name: 'LinkedIn',
-	//     icon: 'linkedin',
-	//     link: 'https://www.linkedin.com/yafarhad/',
-	// },
-	// {
-	//     name: 'X',
-	//     icon: 'x',
-	//     link: 'https://x.com/in/yafarhad/',
-	// },
-	// {
-	//     name: 'Email',
-	//     icon: 'email',
-	//     link: 'mailto:mail@shaan.icu',
-	// },
+	{ name: "GitHub", icon: "github", link: "https://github.com/shanto/" },
+	{ name: "Discord", icon: "discord", link: "https://discord.gg/R2fzW8dd" },
+	{ name: "WhatsApp", icon: "whatsapp", link: "https://call.whatsapp.com/voice/otQM0BadlmG6leGZhXXE9W" },
+	// { name: "LinkedIn", icon: "linkedin", link: "https://www.linkedin.com/yafarhad/" },
+	// { name: "X", icon: "x", link: "https://x.com/in/yafarhad/" },
+	// { name: "Email", icon: "email", link: "mailto:mail@shaan.icu" },
 ];
 
 const home = {
@@ -77,15 +47,13 @@ const home = {
 			<br /> Full-Stack Developer
 		</>
 	),
-	subline: (
+	intro: (
 		<>
-			Hello! I′m {person.firstName}. Former DevOps engineer and full-stack
-			software developer.
+			Hello! I′m {person.firstName}. Former DevOps engineer and full-stack software developer.
 			<br />
 			{person.keywords.join(", ")}
 			<br />
-			are only few from my full list of keywords. Explore the site for the full
-			list.
+			are only few from my full list of keywords. Explore the site for the full list.
 			<br />
 			In my free time I dig into <InlineCode>GitHub</InlineCode> and..
 			<br />
@@ -115,11 +83,10 @@ const about = {
 		title: "Introduction",
 		description: (
 			<>
-				{person.firstName} is a multi-talent full-stack developer and former
-				devops engineer with a passion for transforming complex challenges into
-				simple, elegant solutions enriched with frashest technologies.{" "}
-				{person.keywordsAll.join(", ")} etc are only a few keywords among many
-				others that highlight his vast experience in the industry.
+				{person.firstName} is a multi-talent full-stack developer and former devops engineer with a passion for
+				transforming complex challenges into simple, elegant solutions enriched with frashest technologies.{" "}
+				{person.keywordsAll.join(", ")} etc are only a few keywords among many others that highlight his vast experience
+				in the industry.
 			</>
 		),
 	},
@@ -128,11 +95,10 @@ const about = {
 		display: true,
 		description: (
 			<>
-				Shaan started his career in late-2006 in parallel to studying for his
-				computer science degree. After graduation in mid-2008, he continued as a
-				freelance. Not being tied to any specific employer helped him evaluate
-				and explore many different technologies. Embracing <b>the new</b> or{" "}
-				<b>the next big thing</b> has never been a challenge for him.
+				Shaan started his career in late-2006 in parallel to studying for his computer science degree. After graduation
+				in mid-2008, he continued as a freelance. Not being tied to any specific employer helped him evaluate and
+				explore many different technologies. Embracing <b>the new</b> or <b>the next big thing</b> has never been a
+				challenge for him.
 			</>
 		),
 	},
@@ -146,13 +112,12 @@ const about = {
 				role: "Chief Development Engineer",
 				achievements: [
 					<>
-						Been the go-to person for everything technical for the{" "}
-						<a href="https://royerdesign.com/">Miami based agency</a>{" "}
-						specialized in design industry.
+						Been the go-to person for everything technical for the specialized{" "}
+						<a href="https://royerdesign.com/">Miami based design agency</a>.
 					</>,
 					<>
-						Developed numerous startup websites and apps for the agency— from
-						simple branding websites to complex social apps.
+						Developed numerous startup websites and apps for the agency— from simple branding websites to complex social
+						apps.
 					</>,
 				],
 				images: [
@@ -169,24 +134,13 @@ const about = {
 				timeframe: "2009 - 2022",
 				role: "DevOps Engineer",
 				achievements: [
+					<>Separation and reintegration of web, mail and database systems from monolithic legacy site setup.</>,
 					<>
-						Separation and reintegration of web, mail and database systems from
-						monolithic legacy site setup.
-					</>,
-					<>
-						Developing and managing organization workflows— issue tracking,
-						source code management, deployment automation, log analysis,
-						incident response etc.
+						Developing and managing organization workflows— issue tracking, source code management, deployment
+						automation, log analysis, incident response etc.
 					</>,
 				],
-				images: [
-					{
-						src: "/images/projects/websites/free-ebooks.png",
-						alt: "Once UI Project",
-						width: 16,
-						height: 9,
-					},
-				],
+				images: [],
 			},
 		],
 	},
@@ -197,26 +151,26 @@ const about = {
 			{
 				name: "Daffodil Intl. University, Dhaka",
 				link: "https://daffodilvarsity.edu.bd/",
+				description: <>Studied computer science with software engineering and internet security major.</>,
+			},
+			{
+				name: "Self Taught",
 				description: (
 					<>
-						Studied computer science with software engineering and internet
-						security major.
+						Being freelance, he had the freedom to explore and learn many current and emerging technologies since 2008.
 					</>
 				),
 			},
 		],
 	},
-	technical: {
+	skills: {
 		display: true, // set to false to hide this section
-		title: "Technical skills",
+		title: "Industry skills",
 		skills: [
 			{
 				title: "Dark Mode",
 				description: (
-					<>
-						Able to transform legacy .NET XAML apps to support modern dark modes
-						available in Windows 10-11.
-					</>
+					<>Able to transform legacy .NET XAML apps to support modern dark modes available in Windows 10-11.</>
 				),
 				images: [
 					{
@@ -234,12 +188,7 @@ const about = {
 			// },
 			{
 				title: "Internet Enabled Desktop Apps",
-				description: (
-					<>
-						Building internet enabled desktop apps with modern frameworks like
-						Electron/WebView2.
-					</>
-				),
+				description: <>Building internet enabled desktop apps with modern frameworks like Electron/WebView2.</>,
 				images: [
 					{
 						src: "/images/projects/desktop/mtube.png",

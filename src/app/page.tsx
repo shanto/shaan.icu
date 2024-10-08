@@ -83,7 +83,7 @@ export default function Home() {
 								wrap="balance"
 								onBackground="neutral-weak"
 								variant="body-default-l">
-								{home.subline}
+								{home.intro}
 							</Text>
 						</RevealFx>
 						<RevealFx translateY="12" delay={0.4}>

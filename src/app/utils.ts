@@ -45,18 +45,19 @@ function readMDXFile(filePath: string) {
     return { metadata, content };
 }
 
+function getMDXObject(filePath: string) {
+    const { metadata, content } = readMDXFile(filePath);
+    const slug = path.basename(filePath, path.extname(filePath));
+    return {
+        metadata,
+        slug,
+        content,
+    };
+}
+
 function getMDXData(dir: string) {
     const mdxFiles = getMDXFiles(dir);
-    return mdxFiles.map((file) => {
-        const { metadata, content } = readMDXFile(path.join(dir, file));
-        const slug = path.basename(file, path.extname(file));
-
-        return {
-            metadata,
-            slug,
-            content,
-        };
-    });
+    return mdxFiles.map(fn=>path.join(dir,fn)).map(getMDXObject);
 }
 
 export function getPosts(customPath = ['', '', '', '']) {

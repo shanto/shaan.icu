@@ -8,46 +8,31 @@
 			"name": "Next.js Dev",
 			"type": "node",
 			"program": "node_modules/next/dist/bin/next",
-			"args": [ "dev" ],
+			"args": [ "dev", "--turbo" ],
 			"request": "launch",
 			"outputCapture": "std",
-			"runtimeArgs": ["--inspect"],
-			"skipFiles": ["<node_internals>/**"],
-			"sourceMaps": true,
-			"resolveSourceMapLocations": [
-				"${workspaceFolder}/",
-				"!/node_modules/**"
-			],
+			"runtimeArgs": [ "--inspect" ],
+			"skipFiles": [  ],
+			"sourceMapPathOverrides": {
+				"/turbopack/[project]/*": "${webRoot}/*",
+				"file:///*/.next/server/vendor-chunks/*": "${workspaceFolder}\\node_modules\\next\\dist\\client\\components\\*",
+				"webpack://_N_E/src/*": "${webRoot}/node_modules/next/dist/*"
+			},
 			"serverReadyAction": {
 				"action": "startDebugging",
 				"name": "EdgeBrowserInternal",
-				"killOnServerStop": true,
 				"pattern": "- Local:.+(https?://.+)"
-			}
+			},
+			"postDebugTask": "taskkill-msedge"
 		},
 		{
 			"name": "EdgeBrowserInternal",
-			"vscode-edge-devtools.browserFlavor": "Beta",
+			"userDataDir": "C:/Users/Shaan/Desktop/shaan.icu/.vscode/edge",
 			"type": "vscode-edge-devtools.debug",
 			"request": "launch",
-			"sourceMapPathOverrides": {
-				"webpack://_N_E/src/*": "${webRoot}/node_modules/next/dist/*"
-			},
-			"webRoot": "${workspaceFolder}"
-		},
-		{
-			"name": "ZenBrowser",
-			"type": "firefox",
-			"firefoxExecutable": "C:/Program Files/Zen Browser/zen.exe",
 			"webRoot": "${workspaceFolder}",
-			"request": "launch",
-			"url": "http://localhost:3000/",
-			"keepProfileChanges": false,
-			"preferences": {
-				"zen.welcomeScreen.enabled": false,
-				"zen.view.compact": true,
-				"zen.view.compact.hide-tabbar": true,
-				"zen.view.compact.hide-toolbar": true
+			"sourceMapPathOverrides": {
+				"http://localhost:3000/turbopack/[project]/*": "${webRoot}/*",
 			}
 		}
 	]
