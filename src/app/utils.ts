@@ -19,18 +19,19 @@ type Metadata = {
 };
 
 function getMDXFiles(dir: string) {
-    if (!fs.existsSync(dir)) {
-        throw new Error(`Directory not found: ${dir}`);
+    const dirPath = path.join(process.cwd(), dir);
+    if (!fs.existsSync(dirPath)) {
+        throw new Error(`Directory not found: ${dirPath}`);
     }
 
     return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx');
 }
 
-function readMDXFile(filePath: string) {
+function readMDXFile(relPath: string) {
+    const filePath = path.join(process.cwd(), relPath)
     if (!fs.existsSync(filePath)) {
         throw new Error(`File not found: ${filePath}`);
     }
-
     const rawContent = fs.readFileSync(filePath, 'utf-8');
     const { data, content } = matter(rawContent);
 
@@ -60,9 +61,14 @@ function getMDXData(dir: string) {
     return mdxFiles.map(fn=>path.join(dir,fn)).map(getMDXObject);
 }
 
-export function getPosts(customPath = ['', '', '', '']) {
-    const postsDir = path.join(process.cwd(), ...customPath);
-    return getMDXData(postsDir);
+const posts_path = path.join('src', 'app', 'blog', 'posts');
+export function getPosts() {
+    return getMDXData(posts_path);
+}
+
+const projects_path = path.join('src', 'app', 'work', 'projects');
+export function getProjects() {
+    return getMDXData(projects_path);
 }
 
 export function formatDate(date: string, includeRelative = false) {

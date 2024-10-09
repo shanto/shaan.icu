@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from '@/app/components/mdx'
-import { formatDate, getPosts } from '@/app/utils'
+import { formatDate, getPosts, getProjects } from '@/app/utils'
 import { AvatarGroup, Button, Flex, Heading, SmartImage, Text } from '@/once-ui/components'
 import { baseURL, person } from '@/app/resources';
 
@@ -11,7 +11,7 @@ interface WorkParams {
 }
 
 export async function generateStaticParams() {
-	let posts = getPosts(['src', 'app', 'work', 'projects']);
+	let posts = getProjects();
 
 	return posts.map((post) => ({
 		slug: post.slug,
@@ -19,10 +19,10 @@ export async function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: WorkParams) {
-	let post = getPosts(['src', 'app', 'work', 'projects']).find((post) => post.slug === params.slug)
+	let post = getProjects().find((post) => post.slug === params.slug)
 	
 	if (!post) {
-		return
+		return {}
 	}
 
 	let {
@@ -64,7 +64,7 @@ export function generateMetadata({ params }: WorkParams) {
 }
 
 export default function Project({ params }: WorkParams) {
-	let post = getPosts(['src', 'app', 'work', 'projects']).find((post) => post.slug === params.slug)
+	let post = getPosts().find((post) => post.slug === params.slug)
 
 	if (!post) {
 		notFound()
