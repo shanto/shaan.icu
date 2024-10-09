@@ -8,15 +8,17 @@
 			"name": "Next.js Dev",
 			"type": "node",
 			"program": "node_modules/next/dist/bin/next",
-			"args": [ "dev", "--turbo" ],
+			"args": [
+				"dev",
+				"--turbo"
+			],
 			"request": "launch",
 			"outputCapture": "std",
 			"runtimeArgs": [ "--inspect" ],
 			"skipFiles": [  ],
 			"sourceMapPathOverrides": {
 				"/turbopack/[project]/*": "${webRoot}/*",
-				"file:///*/.next/server/vendor-chunks/*": "${workspaceFolder}\\node_modules\\next\\dist\\client\\components\\*",
-				"webpack://_N_E/src/*": "${webRoot}/node_modules/next/dist/*"
+				// "webpack://_N_E/src/*": "${webRoot}/node_modules/next/dist/*"
 			},
 			"serverReadyAction": {
 				"action": "startDebugging",
@@ -30,9 +32,9 @@
 			"userDataDir": "C:/Users/Shaan/Desktop/shaan.icu/.vscode/edge",
 			"type": "vscode-edge-devtools.debug",
 			"request": "launch",
-			"webRoot": "${workspaceFolder}",
 			"sourceMapPathOverrides": {
 				"http://localhost:3000/turbopack/[project]/*": "${webRoot}/*",
+				// "webpack://_N_E/src/*": "${webRoot}/node_modules/next/dist/*"
 			}
 		}
 	]

@@ -21,6 +21,17 @@ const nextConfig = {
     sassOptions: {
         silenceDeprecations: ['legacy-js-api'],
     },
+    webpack: (config, { dev }) => {
+        if (dev) {
+          config.devtool = 'source-map';
+          config.watchOptions = {
+            ignored: /node_modules/,
+            aggregateTimeout: 300,
+            poll: 1000, // Check for changes every second
+          };
+        }
+        return config;
+    },
     experimental: {
         turbo: {
             watch: true,
