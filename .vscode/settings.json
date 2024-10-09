@@ -3,10 +3,9 @@
     "simpleBrowser.focusLockIndicator.enabled": false,
     "vscode-edge-devtools.headless": true,
     "vscode-edge-devtools.browserArgs": [
-        // "--window-position=-2400,-2400", // fix for white screen whith --headless=new (default)
-        "--headless=old",
-        // "--disable-gpu",
-        // "--no-sandbox",
+        "--headless=old", // Fixes white screen in headless mode
+        // "--window-position=-2400,-2400", "--headless=new", // alternate method for above effect
+        "--disable-extensions-except=C:\\Users\\Shaan\\Desktop\\shaan.icu\\.vscode\\edge\\Default\\Extensions\\gpphkfbcpidddadnkolkpfckpihlkkil\\6.0.0_0" // React Dev Ext
     ],
     "typescript.tsdk": "node_modules\\typescript\\lib"
 }
